@@ -32,14 +32,14 @@ export default function ContadorScreen() {
 const styles = StyleSheet.create({
   container: { // Objeto JavaScript
     flex: 1, // Para repartir
-    backgroundColor: '#e9c3e8ff', // Color del fondo
+    backgroundColor: '#d7c3e9ff', // Color del fondo
     alignItems: 'center', // Eje x
     justifyContent: 'center', // Eje y
 },
 texto:{
   color:'#2600ffff', // Color
   fontSize:30, // Tamaño
-  fontFamily: 'Time New Roman', // Tipo de letra
+  /* fontFamily: 'Time New Roman', Tipo de letra */
   fontWeight: 'bold', // Negritas
   fontStyle: 'italic', // Inclinada
   textDecorationLine: 'line-through', // Tachada

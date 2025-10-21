@@ -3,6 +3,8 @@ import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import BotonesScreen from './BotonesScreen';
 import ContadorScreen from './ContadorScreen';
+import TextimputScreen from './TextimputScreen';
+import PasswordInput from './PasswordScreen';
 
 // 2. Zona de main o componentes
 export default function MenuScreen() {
@@ -13,10 +15,10 @@ export default function MenuScreen() {
       return <ContadorScreen />;
     case 'botones':
       return <BotonesScreen />;
-    case 'scrollview':
-      return <ScrollViewScreen />;
     case 'textimput':
-      return <TextImput />;
+      return <TextimputScreen />;
+    case 'contraseña':
+      return <PasswordInput />;
     case 'menu':
     default:
       return (
@@ -47,7 +49,7 @@ export default function MenuScreen() {
               style={[styles.boton, { backgroundColor: '#eecc44ff' }]}
               onPress={() => setScreen('textimput')}
             >
-              <Text style={styles.textoBoton}>Pract: TextInput</Text>
+              <Text style={styles.textoBoton}>Pract: TextInput / Alerts</Text>
             </TouchableOpacity>
 
             {/* Botón 4 */}
@@ -56,6 +58,14 @@ export default function MenuScreen() {
               onPress={() => setScreen('scrollview')}
             >
               <Text style={styles.textoBoton}>Pract: ScrollView</Text>
+            </TouchableOpacity>
+
+            {/* Botón 5 */}
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#1bdaefff' }]}
+              onPress={() => setScreen('contraseña')}
+            >
+              <Text style={styles.textoBoton}>Pract: Ejemplo Contraseña</Text>
             </TouchableOpacity>
           </View>
         </View>
