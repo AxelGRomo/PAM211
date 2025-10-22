@@ -3,8 +3,13 @@ import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import BotonesScreen from './BotonesScreen';
 import ContadorScreen from './ContadorScreen';
+import ScrollViewScreen from './ScrollViewScreen';
 import TextimputScreen from './TextimputScreen';
-import PasswordInput from './PasswordScreen';
+import PasswordScreen from './PasswordScreen';
+import ImageBackgroundScreen from './ImageBackgroundScreen';
+// import ActivityIndicatorScreen from './ActivityIndicatorScreen';
+// import FlatListScreen from './FlatListScreen';
+// import ModalScreen from './ModalScreen';
 
 // 2. Zona de main o componentes
 export default function MenuScreen() {
@@ -15,58 +20,91 @@ export default function MenuScreen() {
       return <ContadorScreen />;
     case 'botones':
       return <BotonesScreen />;
+    case 'image':
+      return <ImageBackgroundScreen />;
+    case 'scrollview':
+      return <ScrollViewScreen />;
+    case 'password':
+      return <PasswordScreen />;
     case 'textimput':
       return <TextimputScreen />;
-    case 'contraseña':
-      return <PasswordInput />;
+    case 'ActivityIndicator':
+      return <ActivityIndicatorScreen />;
+    case 'FlatList':
+      return <FlatListScreen />;
+    case 'Modal':
+      return <ModalScreen />;
     case 'menu':
     default:
       return (
         <View style={styles.container}>
-          {/* Título principal */}
+          
           <Text style={styles.titulo}>Menú de Prácticas</Text>
 
-          {/* Contenedor de botones */}
           <View style={styles.botonesContainer}>
-            {/* Botón 1 */}
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#c72e2eff' }]}
+              style={[styles.boton, { backgroundColor: '#cf1c1cff' }]}
               onPress={() => setScreen('contador')}
             >
-              <Text style={styles.textoBoton}>Pract: Contador</Text>
+              <Text style={styles.textoBoton}>Contador</Text>
             </TouchableOpacity>
 
-            {/* Botón 2 */}
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#3d99dcff' }]}
+              style={[styles.boton, { backgroundColor: '#dd961dff' }]}
               onPress={() => setScreen('botones')}
             >
-              <Text style={styles.textoBoton}>Pract: Botones</Text>
+              <Text style={styles.textoBoton}>Botones</Text>
             </TouchableOpacity>
 
-            {/* Botón 3 */}
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#eecc44ff' }]}
+              style={[styles.boton, { backgroundColor: '#006195ff' }]}
+              onPress={() => setScreen('image')}
+            >
+              <Text style={styles.textoBoton}>ImageBackground</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#0055ffff' }]}
               onPress={() => setScreen('textimput')}
             >
-              <Text style={styles.textoBoton}>Pract: TextInput / Alerts</Text>
+              <Text style={styles.textoBoton}>TextInput</Text>
             </TouchableOpacity>
 
-            {/* Botón 4 */}
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#1bef37ff' }]}
+              style={[styles.boton, { backgroundColor: '#0055ffff' }]}
+              onPress={() => setScreen('password')}
+            >
+              <Text style={styles.textoBoton}>TextInput Password</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#c11befff' }]}
               onPress={() => setScreen('scrollview')}
             >
-              <Text style={styles.textoBoton}>Pract: ScrollView</Text>
+              <Text style={styles.textoBoton}>ScrollView</Text>
             </TouchableOpacity>
 
-            {/* Botón 5 */}
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#1bdaefff' }]}
-              onPress={() => setScreen('contraseña')}
+              style={[styles.boton, { backgroundColor: '#ca006cff' }]}
+              onPress={() => setScreen('ActivityIndicator')}
             >
-              <Text style={styles.textoBoton}>Pract: Ejemplo Contraseña</Text>
+              <Text style={styles.textoBoton}>ActivityIndicator</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#058800ff' }]}
+              onPress={() => setScreen('FlatList')}
+            >
+              <Text style={styles.textoBoton}>FlatList</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#e00202ff' }]}
+              onPress={() => setScreen('Modal')}
+            >
+              <Text style={styles.textoBoton}>Modal</Text>
+            </TouchableOpacity>
+
           </View>
         </View>
       );
@@ -77,45 +115,35 @@ export default function MenuScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ca9ceaff',
+    backgroundColor: '#dac2eeff',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
-
   titulo: {
-    color: '#ffffffff',
+    color: '#430365ff',
     fontSize: 36,
     fontWeight: 'bold',
     fontStyle: 'italic',
     textDecorationLine: 'underline',
     marginBottom: 10,
   },
-
-  subtitulo: {
-    color: '#ffffffab',
-    fontSize: 18,
-    marginBottom: 40,
-  },
-
   botonesContainer: {
-    width: '80%',
-    flexDirection: 'column', // Los botones se colocan verticalmente
+    width: '50%',
+    flexDirection: 'column',
     alignItems: 'center',
-    gap: 20, // Espacio entre cada botón
+    gap: 20,
   },
-
   boton: {
     width: '100%',
     paddingVertical: 15,
     borderRadius: 12,
     alignItems: 'center',
-    shadowColor: '#fff',
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
+    boxshadowColor: '#fff',
+    boxshadowOpacity: 0.3,
+    boxshadowRadius: 5,
     elevation: 5,
   },
-
   textoBoton: {
     color: '#ffffff',
     fontSize: 18,
