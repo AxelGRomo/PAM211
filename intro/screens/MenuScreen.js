@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import BotonesScreen from './BotonesScreen';
 import ContadorScreen from './ContadorScreen';
 import ScrollViewScreen from './ScrollViewScreen';
+import RepasoScreen from './RepasoScreen';
 import TextimputScreen from './TextimputScreen';
 import PasswordScreen from './PasswordScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
@@ -34,6 +35,8 @@ export default function MenuScreen() {
       return <FlatListScreen />;
     case 'Modal':
       return <ModalScreen />;
+    case 'repaso':
+      return <RepasoScreen />;
     case 'menu':
     default:
       return (
@@ -50,14 +53,14 @@ export default function MenuScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#dd961dff' }]}
+              style={[styles.boton, { backgroundColor: '#dd8d1dff' }]}
               onPress={() => setScreen('botones')}
             >
               <Text style={styles.textoBoton}>Botones</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.boton, { backgroundColor: '#006195ff' }]}
+              style={[styles.boton, { backgroundColor: '#83ca56ff' }]}
               onPress={() => setScreen('image')}
             >
               <Text style={styles.textoBoton}>ImageBackground</Text>
@@ -105,6 +108,13 @@ export default function MenuScreen() {
               <Text style={styles.textoBoton}>Modal</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity
+              style={[styles.boton, { backgroundColor: '#777777ff' }]}
+              onPress={() => setScreen('repaso')}
+            >
+              <Text style={styles.textoBoton}>Repaso</Text>
+            </TouchableOpacity>
+
           </View>
         </View>
       );
@@ -122,10 +132,10 @@ const styles = StyleSheet.create({
   },
   titulo: {
     color: '#430365ff',
-    fontSize: 36,
+    fontSize: 50,
     fontWeight: 'bold',
-    fontStyle: 'italic',
-    textDecorationLine: 'underline',
+    fontStyle: '',
+    textDecorationLine: '',
     marginBottom: 10,
   },
   botonesContainer: {
