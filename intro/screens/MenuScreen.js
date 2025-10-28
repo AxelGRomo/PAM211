@@ -8,8 +8,8 @@ import RepasoScreen from './RepasoScreen';
 import TextimputScreen from './TextimputScreen';
 import PasswordScreen from './PasswordScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
-// import ActivityIndicatorScreen from './ActivityIndicatorScreen';
-// import FlatListScreen from './FlatListScreen';
+import ActivityScreen from './ActivityScreen';
+import ListScreen from './ListScreen';
 // import ModalScreen from './ModalScreen';
 
 // 2. Zona de main o componentes
@@ -29,10 +29,10 @@ export default function MenuScreen() {
       return <PasswordScreen />;
     case 'textimput':
       return <TextimputScreen />;
-    case 'ActivityIndicator':
-      return <ActivityIndicatorScreen />;
-    case 'FlatList':
-      return <FlatListScreen />;
+    case 'ActivityScreen':
+      return <ActivityScreen />;
+    case 'ListScreen':
+      return <ListScreen />;
     case 'Modal':
       return <ModalScreen />;
     case 'repaso':
@@ -89,16 +89,16 @@ export default function MenuScreen() {
 
             <TouchableOpacity
               style={[styles.boton, { backgroundColor: '#ca006cff' }]}
-              onPress={() => setScreen('ActivityIndicator')}
+              onPress={() => setScreen('ActivityScreen')}
             >
-              <Text style={styles.textoBoton}>ActivityIndicator</Text>
+              <Text style={styles.textoBoton}>ActivityScreen</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.boton, { backgroundColor: '#058800ff' }]}
-              onPress={() => setScreen('FlatList')}
+              onPress={() => setScreen('ListScreen')}
             >
-              <Text style={styles.textoBoton}>FlatList</Text>
+              <Text style={styles.textoBoton}>ListScreen</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

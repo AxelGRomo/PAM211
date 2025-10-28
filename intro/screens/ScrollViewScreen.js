@@ -21,7 +21,7 @@ export default class ScrollViewScreen extends Component { // Componente de clase
         ~2462 / ~130 A.E
         </Text>
         <Text style={styles.texto}>
-        Ocurre la Guerra del Archipiélago.
+        Ocurre la Guerra del Archipiélago.{'\n'}
         </Text>
 
         <Text style={styles.subtitulo}>Era del Silencio</Text>
@@ -95,45 +95,95 @@ export default class ScrollViewScreen extends Component { // Componente de clase
         </Text>
         
         <Text style={styles.fechas}>
-        
+        2583 / 9 A.E
         </Text>
         <Text style={styles.texto}>
-        
+        Brume {'\n'}
+        • La doctora Elain Fenix descubre a la Horda Locust. En un intento de hacer contacto con ellos, es capturada y asesinada. Es declarada como desaparecida y posiblemente muerta.
         </Text>
 
         <Text style={styles.fechas}>
-        
+        2585 / 7 A.E
         </Text>
         <Text style={styles.texto}>
-        
+        El origen de la infección Lambent dentro de la Hondonada provoca una Guerra Civil contra los principales habitantes del lugar: los Locust.
         </Text>
         
         <Text style={styles.fechas}>
-        
+        2588 / 4 A.E
         </Text>
         <Text style={styles.texto}>
-        
+        Storm{'\n'}
+        • María Flores se embaraza del bebé de Dominic Santiago.{'\n'}
+        • Marcus Fenix se une al ejercito de la CGO, en contra de los deseos de su padre, junto con Carlos Santiago.{'\n'}
+        • Dominic Santiago y María Flores contraen matrimonio.{'\n'}
+          {'\n'}
+        Frost{'\n'}
+        • Nacimiento de Benedicto Santiago.{'\n'}
+          {'\n'}
+        Thaw{'\n'}
+        • Dominic Santiago se une al ejercito de la CGO.{'\n'}
+          {'\n'}
+        Fecha sin determinar{'\n'}
+        • Toman lugar severos Asaltos en los Campos de Imulsión de Acastu.{'\n'}
+        • Ocurre la Batalla de la Isla Irohma.
         </Text>
 
         <Text style={styles.fechas}>
-        
+        2589 / 3 A.E
         </Text>
         <Text style={styles.texto}>
-        
+        Ocurre el Incidente en la frontera Sarfuth-Maranday.{'\n'}
+        La CGO descubre el desarrollo del Martillo del Alba de la URI en Punto Aspho. Inician los planes para capturar la investigación.{'\n'}
         </Text>
         
         <Text style={styles.fechas}>
-        
+        2590 / 2 A.E
         </Text>
         <Text style={styles.texto}>
-        
+          Brume{'\n'}
+          - 14 de Brume{'\n'}
+          • Sylvia Santiago nace prematuramente.{'\n'}
+          {'\n'}
+          - 15 de Brume{'\n'}
+          • La CGO se infiltra en un puesto avanzado de la URI con la Operación: Nivelador para robar la información de su nuevo proyecto. Carlos Santiago, Helena Stroud y Dan Kennen mueren en la operación. El Prof. Adam Fenix comienza a desarrollarlo.{'\n'}
         </Text>
 
         <Text style={styles.fechas}>
-        
+        2592 / 0 A.E
         </Text>
         <Text style={styles.texto}>
-        
+        Bloom{'\n'}
+        {'\n'}
+        • 32 de Bloom {'\n'} 
+         {'\n'}
+        - Las fuerzas de la CGO se enfrentan contra fuerzas de la URI en la República Independiente de Furlin en la Escaramuza en Ciudad Ghato. {'\n'}
+         {'\n'}
+        • Fecha sin determinar  {'\n'}
+         {'\n'}
+        - El Prof. Adam Fenix termina la elaboración del Martillo del Alba satisfactoriamente, siendo galardonado con la Medalla Octus. {'\n'}
+         {'\n'}
+        Reap {'\n'}
+        {'\n'}
+        • 6 de Reap  {'\n'}
+         {'\n'}
+        - La Tercera Flota de la URI ataca las fuerzas de la CGO en Bonbourg, siendo desplegado el Martillo del Alba como respuesta. {'\n'}
+        {'\n'}
+        • 11 de Reap  {'\n'}
+         {'\n'}
+        - El primer ministro Yori Deschenko firma el Armisticio URI-CGO con el presidente Tomas Dalyell de la CGO.{'\n'}
+        - Ocurre la Escaramuza en el Acantilado de Furlin, siendo una de las últimas batallas de las Guerras del Péndulo, iniciando y finalizando durante el armisticio.{'\n'}
+        - Las Guerras del Péndulo concluyen, con la Coalición de Gobiernos Ordenados como victoriosa.{'\n'}
+        - La República de Gorasnaya se rehusa a rendirse ante la CGO, continuando la batalla en forma de guerrillas.{'\n'}
+        {'\n'}
+        • 14 de Reap  {'\n'}
+        {'\n'}
+        - Para prevenir el lanzamiento de 3 satélites del Martillo del Alba, la CGO lanza un Misil de Masa Ligera desde Azura hacía el Centro de Entrenamiento de Cosmonautas, sofocando el Motín en OZP-11. El comandante Garron Paduk es herido gravemente.{'\n'}
+        {'\n'}
+        • Fecha sin determinar{'\n'}
+        {'\n'}
+        - Se suscita la batalla de Gatka Ridge, donde se logra evitar el dominio de la URI sobre un yacimiento de Imulsión colapsando la montaña adyacente sobre ella.{'\n'}
+        - Tras una disputa interna Locust, Vold RAAM logra ascender al cargo de Uzil por parte de la Reina Myrrah, logrando destituir a Uzil Sraak de su cargo.{'\n'}
         </Text>
 
 
@@ -208,8 +258,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#ffffffff',
     marginBottom: 10,
-    textAlign: 'center',
+    textAlign: '',
     maxWidth: '80%',
   },
-
+  textosubtitulo: {
+    fontSize: 20,
+    color: '#ffffffff',
+    marginBottom: 10,
+    textAlign: 'bold',
+    maxWidth: '80%',
+  },
 })
