@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
+const BackgroundImage = require('../assets/icon.png')
 export default function App() {
   return (
+    <ImageBackground 
+    source={BackgroundImage} 
+    style ={styles.background}
+    resizeMode="cover">
+    
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.titulo}>Restaurante NuevaEsperanza</Text>
+      <Text> </Text>
+      <Text style={styles.descipcion}>Bievenido al restaurante NuevaEsperanza, donde tus platillos preferidos se encuentran</Text>
+      <Text>Menu</Text>
     </View>
+    </ImageBackground>
   );
 }
 
@@ -16,5 +24,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titulo: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  descipcion: {
+    fontSize: 20,
+    marginBottom: 20,
   },
 });
