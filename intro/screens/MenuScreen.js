@@ -10,7 +10,7 @@ import PasswordScreen from './PasswordScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
 import ActivityScreen from './ActivityScreen';
 import ListScreen from './ListScreen';
-// import ModalScreen from './ModalScreen';
+import ModalScreen from './ModalScreen'
 
 // 2. Zona de main o componentes
 export default function MenuScreen() {
@@ -110,7 +110,7 @@ export default function MenuScreen() {
 
             <TouchableOpacity
               style={[styles.boton, { backgroundColor: '#777777ff' }]}
-              onPress={() => setScreen('repaso')}
+              onPress={() => setScreen('Repaso')}
             >
               <Text style={styles.textoBoton}>Repaso</Text>
             </TouchableOpacity>
