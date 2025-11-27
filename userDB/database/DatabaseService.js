@@ -58,6 +58,54 @@ class DatabaseService {
             };
         }
     }
+    async update(id, nombre) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const index = usuarios.findIndex(u => u.id.toString() === id.toString());
+
+            if (index !== -1) {
+                usuarios[index].nombre = nombre;
+                localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+                return usuarios[index];
+            }
+            throw new Error('Usuario no encontrado para actualizar (Web)');
+        } else {
+            const result = await this.db.runAsync(
+                'UPDATE usuarios SET nombre = ? WHERE id = ?',
+                nombre,
+                id
+            );
+            
+            if (result.changes === 0) {
+                throw new Error(`Usuario con ID ${id} no encontrado para actualizar (SQLite)`);
+            }
+
+            // Para simular el retorno del objeto actualizado
+            const updatedUser = await this.db.getFirstAsync('SELECT * FROM usuarios WHERE id = ?', id);
+            return updatedUser;
+        }
+    }
+
+    async delete(id) {
+        if (Platform.OS === 'web') {
+            let usuarios = await this.getAll();
+            const initialLength = usuarios.length;
+            usuarios = usuarios.filter(u => u.id.toString() !== id.toString());
+            
+            if (usuarios.length < initialLength) {
+                localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+                return true; // Eliminado
+            }
+            throw new Error('Usuario no encontrado para eliminar (Web)');
+        } else {
+            const result = await this.db.runAsync('DELETE FROM usuarios WHERE id = ?', id);
+            
+            if (result.changes === 0) {
+                throw new Error(`Usuario con ID ${id} no encontrado para eliminar (SQLite)`);
+            }
+            return true; // Eliminado
+        }
+    }
 }
 
 // Exportar instancia de la clase
